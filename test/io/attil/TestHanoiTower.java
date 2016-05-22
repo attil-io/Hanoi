@@ -43,14 +43,14 @@ public class TestHanoiTower {
 	public void pushPop() {
 		HanoiTower ht = new HanoiTower();
 		ht.push(1);
-		assertEquals(new Integer(1), ht.pop());
+		assertEquals(1, ht.pop());
 	}
 
 	@Test
 	public void pushPeek() {
 		HanoiTower ht = new HanoiTower();
 		ht.push(1);
-		assertEquals(new Integer(1), ht.peek());
+		assertEquals(1, ht.peek());
 	}	
 	
 	@Test
@@ -61,10 +61,10 @@ public class TestHanoiTower {
 		ht.push(3);
 		ht.push(2);
 		ht.push(1);
-		assertEquals(new Integer(1), ht.pop());
-		assertEquals(new Integer(2), ht.pop());
-		assertEquals(new Integer(3), ht.pop());
-		assertEquals(new Integer(4), ht.pop());
-		assertEquals(new Integer(5), ht.pop());
+		assertEquals(1, ht.pop());
+		assertEquals(2, ht.pop());
+		assertEquals(3, ht.pop());
+		assertEquals(4, ht.pop());
+		assertEquals(5, ht.pop());
 	}
 }
