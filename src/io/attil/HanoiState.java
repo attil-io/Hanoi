@@ -20,4 +20,8 @@ public class HanoiState {
 	public int getTop(int column) {
 		return towers[column].peek();
 	}
+	
+	public boolean empty(int column) {
+		return towers[column].empty();
+	}
 }
