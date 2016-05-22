@@ -1,6 +1,9 @@
+package io.attil;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+
+import io.attil.HanoiTower;
 
 public class TestHanoiTower {
 
