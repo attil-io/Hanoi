@@ -24,4 +24,47 @@ public class HanoiState {
 	public boolean empty(int column) {
 		return towers[column].empty();
 	}
+
+	public int findMinColumn() {
+		if (allEmpty()) {
+			throw new IllegalStateException("all columns are empty, cannot find minimum");
+		}
+		int minIdx = 0;
+		for (int i = 0; i < NUM_TOWERS; ++i) {
+			if (!towers[i].empty() && towers[i].peek() < towers[minIdx].peek()) {
+				minIdx = i;
+			}
+		}
+		return minIdx;
+	}
+
+	public int findMaxColumn() {
+		if (allEmpty()) {
+			throw new IllegalStateException("all columns are empty, cannot find maximum");
+		}
+		int maxIdx = 0;
+		for (int i = 0; i < NUM_TOWERS; ++i) {
+			if (!towers[i].empty() && towers[i].peek() > towers[maxIdx].peek()) {
+				maxIdx = i;
+			}
+		}
+		return maxIdx;
+	}
+
+	public int findEmptyColumn() {
+		for (int i = 0; i < NUM_TOWERS; ++i) {
+			if (towers[i].empty()) {
+				return i;
+			}
+		}
+		throw new IllegalStateException("no empty columns");
+	}
+
+	public boolean hasEmptyColumn() {
+		return towers[0].empty() || towers[1].empty() || towers[2].empty();
+	}
+	
+	private boolean allEmpty() {
+		return towers[0].empty() && towers[1].empty() && towers[2].empty();
+	}
 }
