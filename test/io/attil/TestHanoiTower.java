@@ -67,4 +67,30 @@ public class TestHanoiTower {
 		assertEquals(4, ht.pop());
 		assertEquals(5, ht.pop());
 	}
+	
+	@Test
+	public void pushOverSmaller() {
+		HanoiTower ht = new HanoiTower();
+		ht.push(1);
+		try {
+			ht.push(2);
+			fail("IllegalArgumentException expected");
+		}
+		catch (IllegalArgumentException iae) {
+			// that's what we want
+		}
+	}
+
+	@Test
+	public void pushOverEqual() {
+		HanoiTower ht = new HanoiTower();
+		ht.push(1);
+		try {
+			ht.push(1);
+			fail("IllegalArgumentException expected");
+		}
+		catch (IllegalArgumentException iae) {
+			// that's what we want
+		}
+	}
 }

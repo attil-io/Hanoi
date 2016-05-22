@@ -5,6 +5,12 @@ public class HanoiTower {
 	private Stack<Integer> stack = new Stack<>();
 	
 	public void push(int element) {
+		if (!stack.empty()) {
+			int below = stack.peek();
+			if (below <= element) {
+				throw new IllegalArgumentException("cannot push over smaller element");
+			}
+		}
 		stack.push(element);
 	}
 
